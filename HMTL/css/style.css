@@ -1,0 +1,27 @@
+*{margin:0; padding:0;}
+body{
+	background:#FFF;
+}
+
+footer{
+	height:100px;
+	background:#CCC;
+	box-shadow:2px 2px #000;
+	
+}
+
+header{
+	height:80px;
+	background:#66FFFF;
+}
+
+a{
+	color: #FF0000;
+	text-decoration:none;
+	margin:20px;
+}
+a:hover{
+	color:#00FF00;
+	text-shadow:2px 2px #000;
+	text-decoration: underline;
+}
