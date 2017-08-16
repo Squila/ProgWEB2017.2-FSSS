@@ -3,13 +3,35 @@
 #topo{
 	width:1000px;
 	height:300px;
-	background:#CCC;
+
 }
+
+#topo img{
+	float: left;
+	margin-top:60px;
+	margin-left:20px;
+}
+
 #menu{
 	width:1000px;
 	height:80px;
-	background:#F00;
 }
+
+#menu ul{
+	margin-top:40px;
+}
+
+#menu ul li{
+	text-decoration:none;
+	display:inline;
+	margin:40px;
+		
+}
+#menu ul li a{
+	text-decoration:none;
+	font-size: 30px;
+}
+
 #conteudo{
 	width:1000px;
 	height:600px;
