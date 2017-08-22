@@ -35,10 +35,43 @@
 #conteudo{
 	width:1000px;
 	height:600px;
-	background:#0F0;
+	
 }
+
+.img1_conteudo{
+	float:left;
+	width: 300px;
+	height: 300px;
+	margin:50px;
+}
+.img2_conteudo{
+	float:right;
+	width: 300px;
+	height: 300px;
+	margin:50px;
+}
+.titulo_conteudo{
+	color: #bbb;
+	font-size: 70px;
+}
+.titulo_conteudo:hover{
+	color: #00F;
+	text-shadow: 2px 2px #000;
+}
+
+.texto_conteudo{
+	font-family: "COURIER", 'Verdana', arial;
+	font-size:30px;
+}
+
 #rodape{
 	width:1000px;
-	height:100px;
-	background:#00F;
+	height:100px;	
+}
+
+.texto_rodape{
+	color:#777;
+	font-size:30px;
+	font-weight:bolder;
+	border-top: 2px solid #000;
 }
