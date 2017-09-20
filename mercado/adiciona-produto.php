@@ -1,9 +1,11 @@
-<?php include("cabecalho.php"); ?>
+<?php include("cabecalho.php");
+		include("conecta.php");
+ ?>
+
 <?php
 	$nome = $_GET["nome"];
 	$preco = $_GET["preco"];
-	//cria a conexão com o banco
-	$conexao = mysqli_connect('localhost', 'root', '', 'mercado');
+	
 	function insereProdutos($conexao, $nome, $preco){
 		$query = "insert into produtos (nome, preco) values ('{$nome}', {$preco})";
 		return mysqli_query($conexao, $query);
