@@ -1,15 +1,9 @@
 <?php include("cabecalho.php"); ?>
 <?php include("conecta.php"); ?>
+<?php include("banco-produto.php"); ?>
 <?php
 
-function listaProdutos($conexao){
-	$produtos = array();
-	$resultado = mysqli_query($conexao, "select * from produtos");
-	while($produto = mysqli_fetch_assoc($resultado)){
-		array_push($produtos, $produto);
-	}
-	return $produtos;
-}
+
 
 $produtos = listaProdutos($conexao);
 
@@ -26,6 +20,7 @@ $produtos = listaProdutos($conexao);
 <tr>
 <td><?php echo $produto["nome"];?></td>
 <td><?php echo $produto["preco"];?></td>
+<td><a class="text-alert" href="remove-produto.php?id=<?php echo $produto["id"];?>">remover</a></td>
 </tr>
 <?php
 endforeach;

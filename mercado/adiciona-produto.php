@@ -5,13 +5,9 @@
 <?php
 	$nome = $_GET["nome"];
 	$preco = $_GET["preco"];
-	
-	function insereProdutos($conexao, $nome, $preco){
-		$query = "insert into produtos (nome, preco) values ('{$nome}', {$preco})";
-		return mysqli_query($conexao, $query);
-	}
-	
-	
+?>	
+<?php include("banco-produto.php"); ?>
+<?php	
 	//execução da query e verificando SE existe
 	if(insereProdutos($conexao, $nome, $preco)){?>
 	<p class="text-success">Produto <?php echo $nome;?>, <?php echo $preco;?> adicionado com sucesso!</p>
