@@ -3,13 +3,14 @@
  ?>
 
 <?php
-	$nome = $_GET["nome"];
-	$preco = $_GET["preco"];
+	$nome = $_POST["nome"];
+	$preco = $_POST["preco"];
+	$descricao = $_POST["descricao"];
 ?>	
 <?php include("banco-produto.php"); ?>
 <?php	
 	//execução da query e verificando SE existe
-	if(insereProdutos($conexao, $nome, $preco)){?>
+	if(insereProdutos($conexao, $nome, $preco, $descricao)){?>
 	<p class="text-success">Produto <?php echo $nome;?>, <?php echo $preco;?> adicionado com sucesso!</p>
 	<?php } else{ ?>
 	<p class="text-danger">Produto não foi adicionado!</p>
