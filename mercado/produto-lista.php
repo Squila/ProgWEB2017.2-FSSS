@@ -16,6 +16,7 @@ $categorias = listaCategorias($conexao);
 		<td><b>Descrição</b></td>
 		<td><b>Preço</b></td>
 		<td><b>Categoria</b></td>
+		<td><b>Situação</b></td>
 	</tr>
 <?php
 
@@ -25,7 +26,13 @@ $categorias = listaCategorias($conexao);
 <td><?php echo $produto["nome"];?></td>
 <td><?php echo substr($produto["descricao"], 0, 15);?></td>
 <td><?php echo $produto["preco"];?></td>
-<td><?php echo $produto["categoria_id"];?></td>
+<td><?php echo $produto["categoria_nome"];?></td>
+<td><?php if($produto["usado"] == 0){
+			echo "novo";
+		}else{
+			echo "usado";
+		}
+ ?></td>
 <td>
 	<form action="remove-produto.php" method="post">
 	<input type="hidden" name="id" value="<?php echo $produto["id"];?>">

@@ -5,6 +5,6 @@ function listaCategorias($conexao){
 	while($categoria = mysqli_fetch_assoc($resultado)){
 		array_push($categorias, $categoria);
 	}
-	return $categoria;
+	return $categorias;
 }
 ?>

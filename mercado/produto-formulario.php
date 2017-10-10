@@ -1,4 +1,9 @@
 <?php include("cabecalho.php"); ?>
+<?php include("banco-categoria.php"); ?>
+<?php include("conecta.php"); ?>
+<?php
+$categorias = listaCategorias($conexao);
+?>
 			<h1>Formulário de Produtos</h1>
 			<table class="table">
 			<form action="adiciona-produto.php" method="post">
@@ -17,13 +22,21 @@
 			<tr>
 			<td>Categoria:</td>
 			<td>
-				<select class="form-control">
-					<option value="1">esporte</option>
-					<option value="2">mobilidade</option>
-					<option value="3">escolar</option>
+
+				<select name="categoria_id" class="form-control">
+			<?php foreach($categorias as $categoria):?>
+				<option value="<?php echo $categoria['id'];?>">
+						<?php echo $categoria["nome"];?>
+					</option>
+			<?php endforeach;?>
 				</select>
+			
 			</td>
 
+			</tr>
+			<tr>
+			<td></td>
+			<td><input type="checkbox" name="usado" value="true">Usado</td>
 			</tr>
 			<tr>
 			<td><input class="btn btn-primary" type="submit"  value="Enviar"></td>
