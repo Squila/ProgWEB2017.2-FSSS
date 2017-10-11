@@ -3,6 +3,7 @@
  ?>
 
 <?php
+	$id = $_POST["id"];
 	$nome = $_POST["nome"];
 	$preco = $_POST["preco"];
 	$descricao = $_POST["descricao"];
@@ -16,10 +17,10 @@
 <?php include("banco-produto.php"); ?>
 <?php	
 	//execução da query e verificando SE existe
-	if(insereProdutos($conexao, $nome, $preco, $descricao, $categoria_id, $usado)){?>
-	<p class="text-success">Produto <?php echo $nome;?>, <?php echo $preco;?> adicionado com sucesso!</p>
+	if(alteraProdutos($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado)){?>
+	<p class="text-success">Produto <?php echo $nome;?>, <?php echo $preco;?> alterado com sucesso!</p>
 	<?php } else{ ?>
-	<p class="text-danger">Produto não foi adicionado!</p>
+	<p class="text-danger">Produto não foi alterado!</p>
 	<?php	
 	}
 	//fechamento da conexão
