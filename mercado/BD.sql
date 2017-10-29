@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Out-2017 às 02:31
+-- Generation Time: 29-Out-2017 às 20:21
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -74,6 +74,25 @@ INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usa
 (19, 'Carro', '700.00', 'carro usado', 2, 1),
 (20, 'bala de morango', '2.00', 'bala comida', 4, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
+(1, 'joanmelo89@gmail.com', '916c3c928e4794cc3c754b6eb6fb506d');
+
 --
 -- Indexes for dumped tables
 --
@@ -91,6 +110,12 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -104,6 +129,11 @@ ALTER TABLE `categorias`
 --
 ALTER TABLE `produtos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
