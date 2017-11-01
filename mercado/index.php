@@ -1,5 +1,6 @@
-<?php include("cabecalho.php"); ?>
-			<h1>Bem-vindo</h1>
+<?php include("cabecalho.php"); 
+	include("funcoes-seguranca.php");
+?>
 
 			<?php
 			if(isset($_GET["login"]) && $_GET["login"] == 0){
@@ -12,9 +13,23 @@
 				<?php
 			}
 			?>
+			<?php
+				if(isset($_GET["falhaDeSeguranca"]) && $_GET["falhaDeSeguranca"] == true){
+				?>
+				<p class="alert-danger">Você não está logado, por isso não pode faznem nem fazer cadastro ou listagem de produtos !</p>
+				<?php
+			}
+			?>
+
 
 		
-
+			<h1>Bem-vindo</h1>
+			<?php
+			if(isset($_COOKIE["usuario_logado"])){?>
+				<p class="alert-success">Você está logado como <?php echo $_COOKIE["usuario_logado"]?>.</p>
+			<?php
+			}else{
+			?>
 
 			<form action="login.php"  method="post">
 			<table class="table">
@@ -31,6 +46,7 @@
 			</tr>
 			</table>
 			</form>
+			<?php }?>
 <?php include("rodape.php"); ?>
 		
 

@@ -1,10 +1,12 @@
 <?php include("cabecalho.php"); ?>
 <?php include("conecta.php"); ?>
 <?php include("banco-produto.php"); ?>
-<?php include("banco-categoria.php"); ?>
+<?php include("banco-categoria.php"); 
+	include("funcoes-seguranca.php");
+?>
 <?php
 
-
+verificaUsuario();
 
 $produtos = listaProdutos($conexao);
 $categorias = listaCategorias($conexao);

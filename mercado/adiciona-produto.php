@@ -1,8 +1,11 @@
 <?php include("cabecalho.php");
 		include("conecta.php");
+		include("funcoes-seguranca.php");
  ?>
 
 <?php
+verificaUsuario();
+
 	$nome = $_POST["nome"];
 	$preco = $_POST["preco"];
 	$descricao = $_POST["descricao"];
