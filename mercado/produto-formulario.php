@@ -4,6 +4,7 @@
 	include("funcoes-seguranca.php");
 ?>
 <?php 
+
 verificaUsuario();
 
 ?>

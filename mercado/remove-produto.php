@@ -2,10 +2,13 @@
 include("banco-produto.php");
  include("conecta.php");
  include("cabecalho.php");
+ include("funcoes-seguranca.php");
 $id = $_POST["id"];
 removeProduto($conexao, $id);
 ?>
-<p class="text-success">Produto removido com sucesso!</p>
+<?php
+$_SESSION["success"] =  "Produto removido com sucesso!";
+?>
 <?php
 header("Location: produto-lista.php");
 die();

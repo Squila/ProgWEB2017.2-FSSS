@@ -4,9 +4,20 @@
 <?php include("banco-categoria.php"); 
 	include("funcoes-seguranca.php");
 ?>
+<?php 
+				if(isset($_SESSION["success"])){
+				?>
+				<p class="alert-success"><?php echo $_SESSION["success"];?></p>
+				<?php
+			}
+			unset($_SESSION["success"]);
+			?>
 <?php
 
 verificaUsuario();
+?>
+
+<?php
 
 $produtos = listaProdutos($conexao);
 $categorias = listaCategorias($conexao);
