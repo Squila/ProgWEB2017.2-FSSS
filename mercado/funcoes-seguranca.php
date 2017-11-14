@@ -15,8 +15,9 @@ function usuarioEstaLogado(){
 }
 
 function verificaUsuario(){
-	$_SESSION["danger"] = "Você não está logado, por isso não pode fazer nem fazer cadastro ou listagem de produtos !";
-	if(!usuarioEstaLogado()){
+	
+	if(!usuarioEstaLogado()){	
+		$_SESSION["danger"] = "Você não está logado, por isso não pode fazer nem fazer cadastro ou listagem de produtos !";
 	header("Location: index.php");
 	die();
 }

@@ -1,29 +1,14 @@
 <?php include("cabecalho.php"); 
 	include("funcoes-seguranca.php");
+	include("mostra-alerta.php");
 ?>
 
-			<?php 
-				if(isset($_SESSION["success"])){
-				?>
-				<p class="alert-success"><?php echo $_SESSION["success"];?></p>
-				<?php
-			}
-			unset($_SESSION["success"]);
-			?>
 
-			
-			
-			<?php
-				if(isset($_SESSION["danger"])){
-				?>
-				<p class="alert-danger"><?php echo $_SESSION["danger"];?></p>
-				<?php
-			}
-			unset($_SESSION["danger"]);
-			?>
-			
+<?php 
+mostraAlerta("success");
+mostraAlerta("danger");
 
-		
+?>
 			<h1>Bem-vindo</h1>
 			<?php
 			if(isset($_SESSION["usuario_logado"])){?>
