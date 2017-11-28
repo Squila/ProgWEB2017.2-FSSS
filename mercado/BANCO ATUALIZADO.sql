@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Out-2017 às 02:31
+-- Generation Time: 28-Nov-2017 às 14:38
 -- Versão do servidor: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -61,18 +61,33 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `preco`, `descricao`, `categoria_id`, `usado`) VALUES
-(6, 'celular', '200.00', 'Texto do produto', 3, 0),
-(7, 'celular', '100.00', 'Texto do produto			', 2, 1),
-(11, 'chave', '5.00', 'chave que abre qualquer coisa', 1, 1),
 (12, 'pizza', '25.00', 'pizza de bacon', NULL, 0),
-(13, 'pizza', '25.00', 'pizza de bacon', 4, 0),
-(14, 'bicicleta', '100.00', 'bicicleta quebrada', 2, 0),
 (15, 'moto g 2', '200.00', 'celular tela trincada', 2, 0),
 (16, 'moto g 3', '300.00', 'usado', 2, 0),
 (17, 'moto g 4', '400.00', 'usado', 2, 0),
 (18, 'bola', '50.00', 'bola furada', 1, 1),
 (19, 'Carro', '700.00', 'carro usado', 2, 1),
-(20, 'bala de morango', '2.00', 'bala comida', 4, 1);
+(20, 'bala de morango', '2.00', 'bala comida', 4, 1),
+(22, 'bola d\'agua', '3.00', 'bola dÃ¡gua de ouro', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `email`, `senha`) VALUES
+(1, 'joanmelo89@gmail.com', '916c3c928e4794cc3c754b6eb6fb506d');
 
 --
 -- Indexes for dumped tables
@@ -91,6 +106,12 @@ ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -103,7 +124,12 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT for table `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
